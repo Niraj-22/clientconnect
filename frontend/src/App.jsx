@@ -4,6 +4,8 @@ import Loader from "./components/pages/Loader.jsx";
 import Signup from "./components/Signup.jsx";
 import { Routes, Route } from "react-router-dom";
 import { Suspense } from "react";
+import "./App.css";
+import "react-awesome-slider/dist/custom-animations/cube-animation.css";
 import Upload from "./components/pages/Upload.jsx";
 import Process from "./components/pages/Process.jsx";
 import Home from "./components/pages/Home.jsx";

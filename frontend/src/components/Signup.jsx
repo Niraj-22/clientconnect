@@ -62,7 +62,7 @@ const Signup = () => {
   };
   return (
     <>
-      <div className="flex justify-center items-center h-screen text-slate-300 bg-blue-300 ">
+      <div className="flex justify-center items-center h-screen text-slate-300 bg-blue-300 text-2xl ">
         <form
           onSubmit={handleSubmit}
           className="flex-col shadow-2xl shadow-zinc-700 bg-blue-500 rounded-3xl h-fit p-4 max-w-fit   hover:border border-slate-700"
@@ -72,7 +72,7 @@ const Signup = () => {
             <label className=" mb-1">Name </label>
 
             <input
-              className="rounded-xl max-w-fit bg-blue-100 border border-blue-300 text-center"
+              className="rounded-xl max-w-fit bg-blue-100 text-black border border-blue-300 text-center"
               type="name"
               name="name"
               placeholder="A B C"
@@ -88,7 +88,7 @@ const Signup = () => {
             <label className=" mb-1">Email </label>
 
             <input
-              className="rounded-xl max-w-fit bg-blue-100 border border-blue-300 text-center"
+              className="rounded-xl max-w-fit bg-blue-100 border text-black border-blue-300 text-center"
               type="email"
               name="email"
               placeholder="doe@gmail.com"
@@ -104,7 +104,7 @@ const Signup = () => {
             <label className=" mb-1">Password </label>
 
             <input
-              className="rounded-xl max-w-fit bg-blue-100 border border-blue-300 text-center"
+              className="rounded-xl max-w-fit bg-blue-100 border text-black border-blue-300 text-center"
               type="password"
               name="password"
               placeholder="***********"
@@ -122,6 +122,13 @@ const Signup = () => {
               value={`${loading ? "Login in ...." : "Login"}`}
             >
               Sign - In
+            </button>
+            <button
+              className="rounded-md bg-blue-600 p-1 hover:bg-blue-900"
+              type="button"
+              onClick={() => navigate(-1)}
+            >
+              Cancel
             </button>
           </div>
         </form>

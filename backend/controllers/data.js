@@ -27,7 +27,6 @@ const uploadFile = async (req, res) => {
       console.error(err);
       return res.status(500).json({ error: "Failed to save the file" });
     }
-    console.log("File saved successfully:", originalFileName);
     res.json({
       success: true,
       message: "File uploaded and saved successfully",
@@ -107,7 +106,7 @@ const processData = async (req, res) => {
       ]);
 
       // Apply K-Means clustering
-      kmeans.clusterize(scaled_rfm_array, { k: 3 }, (err, result) => {
+      kmeans.clusterize(scaled_rfm_array, { k: 4 }, (err, result) => {
         if (err) {
           console.error(err);
           res

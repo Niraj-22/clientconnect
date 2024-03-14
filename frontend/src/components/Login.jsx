@@ -65,17 +65,17 @@ const Login = () => {
   };
   return (
     <>
-      <div className="flex justify-center items-center h-screen text-slate-300 bg-blue-300 ">
+      <div className="flex justify-center items-center h-screen text-slate-300 bg-blue-300 text-2xl ">
         <form
           onSubmit={handleSubmit}
-          className="flex-col shadow-2xl shadow-zinc-700 bg-blue-500 rounded-3xl h-fit p-4 max-w-fit   hover:border border-slate-700"
+          className="flex-col shadow-2xl shadow-zinc-700 bg-blue-500 rounded-3xl  p-4  hover:border border-slate-700"
         >
           <p className="text-center text-2xl p-4 font-mono"> Login</p>
           <div className="flex flex-col justify-center p-2">
             <label className=" mb-1">Email </label>
 
             <input
-              className="rounded-xl max-w-fit bg-blue-100 border border-blue-300 text-center"
+              className="rounded-xl  bg-blue-100 border text-black border-blue-300 text-center"
               type="email"
               name="email"
               placeholder="doe@gmail.com"
@@ -91,7 +91,7 @@ const Login = () => {
             <label className=" mb-1">Password </label>
 
             <input
-              className="rounded-xl max-w-fit bg-blue-100 border border-blue-300 text-center"
+              className="rounded-xl  bg-blue-100 border text-black border-blue-300 text-center"
               type="password"
               name="password"
               placeholder="***********"

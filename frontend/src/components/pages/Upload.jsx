@@ -1,6 +1,7 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import axios from "../../utils/axiosInstance";
 
 const Upload = () => {
   const [file, setFile] = useState(null);
@@ -12,7 +13,6 @@ const Upload = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Called");
     if (!file) {
       setMessage("Please select a file");
       return;
@@ -22,19 +22,17 @@ const Upload = () => {
     formData.append("file", file);
 
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:5000/api/v1/data/upload",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axios.post("/data/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       setMessage("File uploaded successfully");
-      console.log(response);
-      navigate("/data"); // Assuming server responds with some data
+      toast.success(response.data.message, {
+        autoClose: true,
+      });
+      navigate("/data");
     } catch (error) {
       setMessage("Error uploading file");
       console.error(error);
@@ -42,9 +40,9 @@ const Upload = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-[#b7f8db] to-[#50a7c2] h-screen flex  items-center justify-center text-white ">
+    <div className="bg-gradient-to-b from-[#b7f8db] to-[#50a7c2] h-screen flex text-3xl  items-center justify-center text-white ">
       <div className="border rounded-xl text-center p-3">
-        <h2 className="text-3xl p-4">Upload CSV File</h2>
+        <p className="text-5xl p-4">Upload CSV File</p>
         <form onSubmit={handleSubmit} className="border rounded-md p-3">
           <input type="file" onChange={handleFileChange} accept=".csv" />
           <button
