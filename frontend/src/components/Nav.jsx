@@ -7,11 +7,8 @@ const Nav = () => {
         <NavLink to="/data" className="border border-blue-300 rounded-md p-2">
           DashBoard
         </NavLink>
-        <NavLink
-          to="/profile"
-          className="border border-blue-300 rounded-md p-2"
-        >
-          Profile
+        <NavLink to="/upload" className="border border-blue-300 rounded-md p-2">
+          Upload CSV
         </NavLink>
       </nav>
     </div>
