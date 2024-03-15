@@ -1,12 +1,16 @@
 import { useDispatch } from "react-redux";
 import { logout } from "../store/auth";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const LogoutButton = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(logout());
+    toast.success("Logout Successfully", {
+      autoClose: true,
+    });
     navigate("/");
   };
   return (
