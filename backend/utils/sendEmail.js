@@ -11,17 +11,25 @@ const sendEmail = async ({ emailTo, subject, code = 0, content }) => {
     },
   });
 
+  let htmlContent = `
+    <div>
+      <h2>Welcome to Client Connect.</h2>
+      <p>Use our services to get tailored marketting</p>
+    `;
+
+  if (code !== 0) {
+    htmlContent += `
+      <h3>Use this below code to ${content}</h3>
+      <p><strong>Code : </strong>${code}</p>
+    `;
+  }
+
+  htmlContent += `</div>`;
+
   const message = {
     to: emailTo,
     subject,
-    html: `
-            <div>
-            <h2>Welcome to Client Connect.</h2>
-            <p>Use our services to get tailored marketting</p>
-              <h3>Use this below code to ${content}</h3>
-              <p><strong>Code : </strong>${code}</p>
-            </div>
-        `,
+    html: htmlContent,
   };
 
   await transporter.sendMail(message);
