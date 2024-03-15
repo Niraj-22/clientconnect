@@ -19,6 +19,11 @@ const signup = async (req, res, next) => {
     const newUser = new User({ name, email, password: hashedPassword });
 
     await newUser.save();
+    await sendEmail({
+      emailTo: email,
+      subject: "Welcome to  Client Connect",
+      content: " ",
+    });
 
     res.status(201).json({
       code: 201,
