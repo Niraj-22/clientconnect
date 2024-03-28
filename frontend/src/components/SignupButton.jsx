@@ -5,9 +5,9 @@ const SignupButton = () => {
   return (
     <div>
       <button
-        type="buttton"
+        type="button"
         onClick={() => navigate("/login")}
-        className="border border-blue-300 rounded-md p-2  hover:bg-[#b7f8db]"
+        className="border border-blue-300 rounded-md p-2  hover:bg-blue-400"
       >
         Login / Signup
       </button>

@@ -6,13 +6,13 @@ const Nav = () => {
       <nav className="flex  justify-between">
         <NavLink
           to="/data"
-          className="border border-blue-300 rounded-md m-2 hover:bg-[#b7f8db] p-2"
+          className="border border-blue-300 rounded-md m-2 hover:bg-blue-400 p-2"
         >
           DashBoard
         </NavLink>
         <NavLink
           to="/upload"
-          className="border border-blue-300 rounded-md hover:bg-[#b7f8db] m-2 p-2"
+          className="border border-blue-300 rounded-md hover:bg-blue-400 m-2 p-2"
         >
           Upload CSV
         </NavLink>

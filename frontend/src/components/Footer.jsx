@@ -10,7 +10,6 @@ const Footer = () => {
         <div>PUNE,MAHARASHTRA</div>
         <div className="font-bold text-2xl">Contact :</div>
         <div className="">customersegmentpro@gmail.com</div>
-        <div className="">+91 9422571198</div>
       </div>
     </div>
   );

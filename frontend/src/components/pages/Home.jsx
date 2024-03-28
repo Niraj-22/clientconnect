@@ -1,7 +1,7 @@
 import Slider from "./../Slider";
-import para1 from "../../assets/para1.jpeg";
-import para3 from "../../assets/para3.jpeg";
-import para2 from "../../assets/para2.jpeg";
+import para1 from "../../assets/p1.png";
+import para3 from "../../assets/p3.png";
+import para2 from "../../assets/p2.png";
 
 const Home = () => {
   return (
@@ -9,18 +9,18 @@ const Home = () => {
       <div>
         <Slider />
       </div>
-      <div className="bg-gradient-to-b from-[#b7f8db] to-[#50a7c2] flex flex-col  text-black ">
+      <div className="bg-gradient-to-b from-blue-500 to-blue-300 flex flex-col  text-white ">
         <p className="text-5xl p-4 mt-5">
           Welcome to <span className="dancing-script-font">ClientConnect</span>
         </p>
-        <div className="flex border border-slate-500 p-2 m-1">
+        <div className="flex border border-slate-500 p-2 m-1 items-center">
           <img
             src={para1}
             alt="Customer Segmentation"
-            width="40%"
+            width="50%"
             className="p-3"
           />
-          <p className="p-3 pt-6 text-3xl">
+          <p className="p-8 pt-6 text-xl">
             Customer segmentation involves categorizing customers into groups
             based on shared characteristics such as demographics, behavior, or
             preferences. This process is essential for businesses because it
@@ -35,8 +35,8 @@ const Home = () => {
             serve their diverse customer base.
           </p>
         </div>
-        <div className="flex border border-slate-500 p-2 m-1">
-          <p className="p-3 pt-6 text-3xl">
+        <div className="flex border border-slate-500 p-2 m-1 items-center">
+          <p className="p-8 pt-6 text-xl">
             By analyzing transaction datasets, businesses can provide customers
             with personalized recommendations, customized promotions, and
             improved customer service. This analysis helps identify purchasing
@@ -53,13 +53,13 @@ const Home = () => {
           <img
             src={para2}
             alt="Customer Segmentation"
-            width="40%"
+            width="50%"
             className="p-3"
           />
         </div>
-        <div className="flex border border-slate-500 p-2 m-1">
-          <img src={para3} alt="Benefits" width="40%" className="p-3" />
-          <p className="p-3 pt-6 text-3xl">
+        <div className="flex border border-slate-500 p-2 m-1 items-center">
+          <img src={para3} alt="Benefits" width="50%" className="p-3" />
+          <p className="p-8 pt-6 text-xl">
             Customer segmentation benefits businesses by enabling targeted
             marketing, personalized customer experiences, efficient resource
             allocation, market differentiation, risk management, and informed

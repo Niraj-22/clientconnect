@@ -1,9 +1,9 @@
 import AwesomeSlider from "react-awesome-slider";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
 import "react-awesome-slider/dist/styles.css";
-import bg from "./../assets/bg.jpg";
-import para1 from "../assets/para1.jpeg";
-import para3 from "../assets/para3.jpeg";
+import para1 from "../assets/dash2.png";
+import para2 from "../assets/s2.png";
+import dash1 from "../assets/dash1.png";
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const Slider = () => {
@@ -15,9 +15,15 @@ const Slider = () => {
       interval={3000}
       animation="cubeAnimation"
     >
-      <div data-src={para3} />
-      <div data-src={bg} />
-      <div data-src={para1} />
+      <div className=" h-full">
+        <img src={dash1} alt="Image 1" />
+      </div>
+      <div className=" h-full">
+        <img src={para2} alt="Image 1" />
+      </div>
+      <div className=" h-full">
+        <img src={para1} alt="Image 1" />
+      </div>
     </AutoplaySlider>
   );
 };
