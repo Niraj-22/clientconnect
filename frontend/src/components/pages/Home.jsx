@@ -109,13 +109,7 @@ const Home = () => {
               experience the benefits of customer segmentation and
               visualization.
             </p>
-            <button
-              type="button"
-              onClick={() => navigate("/login")}
-              className="border  rounded-md p-3 bg-white text-blue-800"
-            >
-              Try Now
-            </button>
+            <span className="p-3"> Login to get Started</span>
           </div>
         </div>
       </div>
