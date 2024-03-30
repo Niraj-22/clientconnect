@@ -107,7 +107,6 @@ const Home = () => {
               experience the benefits of customer segmentation and
               visualization.
             </p>
-            <span className="p-3"> Login to get Started</span>
           </div>
         </div>
       </div>
