@@ -1,55 +1,92 @@
 import Slider from "./../Slider";
-import para1 from "../../assets/p1.png";
+import para1 from "../../assets/upload.png";
 import para3 from "../../assets/p3.png";
-import para2 from "../../assets/p2.png";
+import para2 from "../../assets/p1.png";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div>
         <Slider />
       </div>
       <div className="bg-gradient-to-b from-blue-500 to-blue-300 flex flex-col  text-white ">
-        <p className="text-5xl p-4 mt-5">
+        <div className="text-5xl p-4 mt-5">
           Welcome to <span className="dancing-script-font">ClientConnect</span>
-        </p>
+          <p className="text-xl p-2">
+            At ClientConnect, we empower you to gain valuable insights from your
+            transaction data through advanced customer segmentation and
+            visualization techniques. Whether you are a small business owner, a
+            marketing professional, or an analyst, our platform simplifies the
+            process of understanding your customers and making data-driven
+            decisions.
+          </p>
+        </div>
         <div className="flex border border-slate-500 p-2 m-1 items-center">
           <img
             src={para1}
             alt="Customer Segmentation"
-            width="50%"
+            width="38%"
             className="p-3"
           />
-          <p className="p-8 pt-6 text-xl">
-            Customer segmentation involves categorizing customers into groups
-            based on shared characteristics such as demographics, behavior, or
-            preferences. This process is essential for businesses because it
-            allows them to tailor their marketing strategies and offerings to
-            better meet the needs of specific customer segments. By
-            understanding the unique preferences and behaviors of different
-            groups, companies can create more targeted and personalized
-            marketing campaigns, allocate resources more effectively, improve
-            the overall customer experience, and ultimately drive higher levels
-            of satisfaction, loyalty, and profitability. Customer segmentation
-            enables businesses to optimize their marketing efforts and better
-            serve their diverse customer base.
-          </p>
+          <div className="p-8 pt-6 ">
+            <p className="text-3xl text-center font-black">How it works</p>
+            <ul className="text-xl">
+              <li>
+                <p className="font-bold">Upload Your CSV File:</p>
+                Simply upload your transaction data in CSV format. Our platform
+                supports various types of transaction data, including sales
+                records, customer interactions, and more
+              </li>
+              <li>
+                <p className="font-bold">Data Processing:</p> Once uploaded, our
+                powerful algorithms analyze your data to identify key patterns
+                and segments within your customer base.
+              </li>
+              <li>
+                <p className="font-bold">Customer Segmentation:</p> We segment
+                your customers based on various attributes such as purchase
+                history, demographics, and behavioral patterns. This
+                segmentation enables you to tailor your marketing strategies and
+                improve customer engagement.
+              </li>
+              <li>
+                <p className="font-bold">Visualize Insights: </p>Explore
+                visually-rich dashboards and charts that provide intuitive
+                representations of your segmented customer data. Understand
+                trends, identify opportunities, and optimize your business
+                strategies with ease.
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="flex border border-slate-500 p-2 m-1 items-center">
-          <p className="p-8 pt-6 text-xl">
-            By analyzing transaction datasets, businesses can provide customers
-            with personalized recommendations, customized promotions, and
-            improved customer service. This analysis helps identify purchasing
-            patterns and preferences, enabling companies to tailor their
-            offerings to individual customer needs. Additionally, optimized
-            inventory management ensures products are readily available,
-            minimizing stockouts. Enhanced loyalty programs based on transaction
-            history incentivize repeat purchases, fostering stronger customer
-            relationships. Overall, leveraging transaction data for customer
-            segmentation enables businesses to deliver a more satisfying and
-            rewarding customer experience through targeted marketing efforts,
-            personalized services, and efficient inventory management.
-          </p>
+          <div className="p-8 pt-6 ">
+            <p className="text-3xl text-center font-black">Why Choose Us</p>
+            <ul className="text-xl">
+              <li>
+                <p className="font-bold">Accuracy :</p>
+                Our algorithms are designed to deliver accurate insights,
+                ensuring reliable results for your business decisions.
+              </li>
+              <li>
+                <p className="font-bold">Ease of Use:</p> Our user-friendly
+                interface makes it easy for anyone to upload data, analyze it,
+                and derive actionable insights.
+              </li>
+              <li>
+                <p className="font-bold">Customization:</p> Tailor the
+                segmentation criteria and visualization options to suit your
+                specific business needs.
+              </li>
+              <li>
+                <p className="font-bold">Security: </p>We prioritize the
+                security and privacy of your data, employing industry-standard
+                encryption and security measures.
+              </li>
+            </ul>
+          </div>
           <img
             src={para2}
             alt="Customer Segmentation"
@@ -59,22 +96,27 @@ const Home = () => {
         </div>
         <div className="flex border border-slate-500 p-2 m-1 items-center">
           <img src={para3} alt="Benefits" width="50%" className="p-3" />
-          <p className="p-8 pt-6 text-xl">
-            Customer segmentation benefits businesses by enabling targeted
-            marketing, personalized customer experiences, efficient resource
-            allocation, market differentiation, risk management, and informed
-            product development. By categorizing customers based on
-            characteristics and behaviors, businesses can tailor their marketing
-            efforts to specific segments, improving campaign effectiveness.
-            Personalization enhances customer satisfaction and loyalty.
-            Efficient resource allocation maximizes ROI. Market differentiation
-            identifies niche opportunities. Risk management mitigates churn and
-            demand fluctuations. Informed product development ensures offerings
-            align with customer needs. Overall, customer segmentation optimizes
-            marketing, enhances customer relationships, allocates resources
-            effectively, differentiates businesses, manages risks, and drives
-            innovation and growth.
-          </p>
+          <div className="p-8 pt-6 text-xl">
+            <p className="text-3xl text-center font-black">Get Started today</p>
+            <p className="p-3">
+              Join the ranks of successful businesses leveraging data-driven
+              insights to stay ahead of the competition. Sign up now and
+              revolutionize the way you understand and interact with your
+              customers.
+            </p>
+            <p className="p-3">
+              Unlock the power of your transaction data. Sign up now to
+              experience the benefits of customer segmentation and
+              visualization.
+            </p>
+            <button
+              type="button"
+              onClick={() => navigate("/login")}
+              className="border  rounded-md p-3 bg-white text-blue-800"
+            >
+              Try Now
+            </button>
+          </div>
         </div>
       </div>
     </div>
