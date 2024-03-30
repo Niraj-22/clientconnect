@@ -2,10 +2,8 @@ import Slider from "./../Slider";
 import para1 from "../../assets/upload.png";
 import para3 from "../../assets/p3.png";
 import para2 from "../../assets/p1.png";
-import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate();
   return (
     <div>
       <div>
