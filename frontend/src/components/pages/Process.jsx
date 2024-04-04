@@ -2,9 +2,24 @@ import { useEffect, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import axios from "../../utils/axiosInstance";
+import Joyride from "react-joyride";
 import ScatterComponent from "../ScatterComponent";
 const Process = () => {
   const [data, setData] = useState({});
+  const steps = [
+    {
+      target: ".clusters",
+      content: "This shows your segmented clusters",
+    },
+    {
+      target: ".info",
+      content: "This shows information about your data",
+    },
+    {
+      target: ".rfm",
+      content: "This shows RFM scores of your individual entries",
+    },
+  ];
   const [cluster, setCluster] = useState([]);
   let count_0,
     count_1,
@@ -38,10 +53,30 @@ const Process = () => {
   return (
     <div className="">
       <div className=" flex justify-around  bg-gradient-to-b from-[#b7f8db] to-[#50a7c2]  text-black ">
-        <div className="h-[45%] m-3">
+        <Joyride
+          steps={steps}
+          continuous={true}
+          showSkipButton={true}
+          styles={{
+            tooltipContainer: {
+              textAlign: "left",
+            },
+            buttonNext: {
+              backgroundColor: "green",
+            },
+            buttonBack: {
+              marginRight: 10,
+            },
+          }}
+          locale={{
+            last: "End tour",
+            skip: "Close tour",
+          }}
+        />
+        <div className="h-[45%] m-3 clusters">
           <Doughnut data={barData} />
         </div>
-        <div className="mx-2 my-10">
+        <div className="mx-2 my-10 info">
           <table className="table-auto text-left  border border-slate-500">
             <thead>
               <tr>
@@ -90,10 +125,11 @@ const Process = () => {
           </table>
         </div>
       </div>
-      <div className="p-3 bg-slate-200">
+      <div className="p-3 bg-slate-200 ">
         <ScatterComponent
           ClusterData={data.rfm_statistics ? data.rfm_statistics : []}
         />
+        <div className="rfm"></div>
       </div>
     </div>
   );
