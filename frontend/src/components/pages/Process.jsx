@@ -17,7 +17,10 @@ const Process = () => {
     },
     {
       target: ".rfm",
-      content: "This shows RFM scores of your individual entries",
+      content: `This shows RFM scores of your individual entries where -
+         R stand for Recency ,
+         F stands for Frequency ,
+         M stands for Monetary`,
     },
   ];
   const [cluster, setCluster] = useState([]);
@@ -125,11 +128,10 @@ const Process = () => {
           </table>
         </div>
       </div>
-      <div className="p-3 bg-slate-200 ">
+      <div className="p-3 bg-slate-200 rfm ">
         <ScatterComponent
           ClusterData={data.rfm_statistics ? data.rfm_statistics : []}
         />
-        <div className="rfm"></div>
       </div>
     </div>
   );

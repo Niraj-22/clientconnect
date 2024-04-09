@@ -83,7 +83,7 @@ const ScatterComponent = ({ ClusterData = [] }) => {
 
   return (
     <div>
-      <Bar options={options} data={data} />
+      <Bar options={options} data={data} height={80} />
       <div className="flex justify-around">
         <button
           type="button"
