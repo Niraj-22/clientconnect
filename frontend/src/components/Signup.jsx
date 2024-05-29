@@ -48,7 +48,7 @@ const Signup = () => {
         setFormData(initialFormData);
         setFormError(initialFormError);
         setLoading(false);
-        navigate("/");
+        navigate("/verify");
       } catch (error) {
         setLoading(false);
         console.log(error);

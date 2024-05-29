@@ -99,12 +99,10 @@ const verifyUser = async (req, res, next) => {
     const { email, code } = req.body;
     const user = await User.findOne({ email });
     if (!user) {
-      res.code = 404;
-      throw new Error("User not found ");
+      res.status(400).json({ message: "User not found " });
     }
-    if (user.verificationCode !== code) {
-      res.code = 400;
-      throw new Error("Invalid code ");
+    if (user.verificationCode != code) {
+      res.status(400).json({ message: "Invalid Code " });
     }
 
     user.isVerified = true;

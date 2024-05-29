@@ -9,6 +9,7 @@ import "react-awesome-slider/dist/custom-animations/cube-animation.css";
 import Upload from "./components/pages/Upload.jsx";
 import Process from "./components/pages/Process.jsx";
 import Home from "./components/pages/Home.jsx";
+import EmailVerification from "./components/EmailVerification.jsx";
 function App() {
   return (
     <Suspense fallback={<Loader />}>
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/verify" element={<EmailVerification />} />
         </Route>
       </Routes>
     </Suspense>
