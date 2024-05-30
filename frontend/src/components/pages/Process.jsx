@@ -28,11 +28,13 @@ const Process = () => {
   const [cluster, setCluster] = useState([]);
   let count_0,
     count_1,
-    count_2 = 0;
+    count_2,
+    count_3 = 0;
   if (cluster.length > 1) {
     count_0 = cluster[0].length == 1 ? cluster[3].length : cluster[0].length;
     count_1 = cluster[1].length == 1 ? cluster[3].length : cluster[1].length;
     count_2 = cluster[2].length == 1 ? cluster[3].length : cluster[2].length;
+    count_3 = cluster[3].length == 1 ? cluster[3].length : cluster[3].length;
   }
   ChartJS.register(ArcElement, Tooltip, Legend);
   const fetchData = async () => {
@@ -45,12 +47,12 @@ const Process = () => {
   }, []);
 
   const barData = {
-    labels: ["Cluster 0 ", "Cluster 1", "Cluster 2"],
+    labels: ["Cluster 0 ", "Cluster 1", "Cluster 2", "Cluster 3"],
     datasets: [
       {
         label: "Clusters",
-        data: [count_0, count_1, count_2],
-        backgroundColor: ["red", "blue", "orange"],
+        data: [count_0, count_1, count_2, count_3],
+        backgroundColor: ["red", "blue", "orange", "green"],
         borderWidth: 1,
       },
     ],
@@ -99,7 +101,7 @@ const Process = () => {
               <tr>
                 <td className="p-3 border border-slate-500">No of segments:</td>
                 <td className="p-3 border border-slate-500">
-                  {cluster.length < 1 ? 0 : cluster.length - 1}
+                  {cluster.length < 1 ? 0 : cluster.length}
                 </td>
               </tr>
               <tr>
