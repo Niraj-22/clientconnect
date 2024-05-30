@@ -164,6 +164,21 @@ const processData = async (req, res) => {
 
     const clusters = await performClustering(scaledRFMArray, k);
 
+    // Find best and worst customers
+    const rfmScores = scaledRFMArray.map((entry, index) => ({
+      CustomerID: Object.keys(rfm_array)[index], // Assuming customer IDs are keys in rfm_array
+      RFM: entry,
+    }));
+    rfmScores.sort((a, b) => {
+      // Sorting based on total RFM score
+      const totalRFMA = a.RFM.reduce((sum, val) => sum + val, 0);
+      const totalRFMB = b.RFM.reduce((sum, val) => sum + val, 0);
+      return totalRFMB - totalRFMA; // Descending order
+    });
+
+    const bestCustomer = rfmScores[0];
+    const worstCustomer = rfmScores[rfmScores.length - 1];
+
     const resultJSON = {
       rfm_statistics: scaledRFMArray,
       averages: {
@@ -175,6 +190,8 @@ const processData = async (req, res) => {
         avg_scaled_monetary,
       },
       clusters,
+      bestCustomer,
+      worstCustomer,
     };
 
     res.json(resultJSON);

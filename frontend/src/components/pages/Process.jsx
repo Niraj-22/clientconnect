@@ -10,6 +10,10 @@ const Process = () => {
   const [data, setData] = useState({});
   const steps = [
     {
+      target: ".intro",
+      content: "This are the definitions of RFM ",
+    },
+    {
       target: ".clusters",
       content: "This shows your segmented clusters",
     },
@@ -17,6 +21,11 @@ const Process = () => {
       target: ".info",
       content: "This shows information about your data",
     },
+    {
+      target: ".best",
+      content: "This are the RFM scores of the best and worst customers",
+    },
+    { target: ".charts", content: "This are the plots based on the clusters" },
     {
       target: ".rfm",
       content: `This shows RFM scores of your individual entries where -
@@ -59,7 +68,21 @@ const Process = () => {
   };
   return (
     <div className="">
-      <div className=" flex justify-around  bg-gradient-to-b from-[#b7f8db] to-[#50a7c2]  text-black ">
+      <div className="p-3 m-1 text-3xl bg-blue-100 text-blue-800 intro">
+        <p>
+          <strong>Recency:</strong> How recently a customer made a purchase. A
+          lower score indicates a recent purchase.
+        </p>
+        <p>
+          <strong>Frequency:</strong> How often a customer makes a purchase. A
+          higher score indicates frequent purchases.
+        </p>
+        <p>
+          <strong>Monetary:</strong> How much money a customer spends on
+          purchases. A higher score indicates higher spending.
+        </p>
+      </div>
+      <div className=" flex justify-around  bg-blue-100  text-black ">
         <Joyride
           steps={steps}
           continuous={true}
@@ -132,17 +155,37 @@ const Process = () => {
           </table>
         </div>
       </div>
-      <div className="p-3 m-3 bg-slate-200 rfm ">
-        <ScatterComponent
-          ClusterData={data.rfm_statistics ? data.rfm_statistics : []}
-        />
+
+      <div className="p-3 text-3xl  bg-blue-100 text-blue-600 best ">
+        <div>
+          <strong> Best Customer RFM Score:</strong>
+          <p>
+            {data.bestCustomer
+              ? data.bestCustomer.RFM.map((i) => Math.floor(i) + " ")
+              : null}
+          </p>
+        </div>
+        <div>
+          <strong> Worst Customer RFM Score :</strong>
+          <p>
+            {data.worstCustomer
+              ? data.worstCustomer.RFM.map((i) => Math.floor(i) + " ")
+              : null}
+          </p>
+        </div>
       </div>
-      <div className="m-3 p-3 bg-blue-100">
+      <div className="m-3 p-3 bg-blue-100 charts">
         {data.rfm_statistics ? (
           <RFMCharts data={data} />
         ) : (
           <Loader loading="true" />
         )}
+      </div>
+
+      <div className="p-3 m-3 bg-slate-200 rfm ">
+        <ScatterComponent
+          ClusterData={data.rfm_statistics ? data.rfm_statistics : []}
+        />
       </div>
     </div>
   );
