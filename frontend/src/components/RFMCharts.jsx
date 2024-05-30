@@ -1,7 +1,13 @@
 // src/components/RFMCharts.js
 
 import { Bar, Radar, Scatter } from "react-chartjs-2";
-
+import {
+  RadialLinearScale,
+  LineElement,
+  PointElement,
+  Chart as ChartJS,
+} from "chart.js";
+ChartJS.register(RadialLinearScale, PointElement, LineElement);
 const RFMCharts = ({ data }) => {
   const { rfm_statistics, averages, clusters } = data;
 

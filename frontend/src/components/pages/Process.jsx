@@ -136,7 +136,11 @@ const Process = () => {
         />
       </div>
       <div className="m-3 p-3 bg-blue-100">
-        {data ? <RFMCharts data={data} /> : <Loader loading="true" />}
+        {data.rfm_statistics ? (
+          <RFMCharts data={data} />
+        ) : (
+          <Loader loading="true" />
+        )}
       </div>
     </div>
   );
