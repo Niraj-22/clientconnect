@@ -92,20 +92,26 @@ const RFMCharts = ({ data }) => {
   };
 
   return (
-    <div>
-      <h2>RFM Averages</h2>
-      <Bar data={barData} />
+    <div className="flex flex-col justify-evenly">
+      <div className="p-3 text-center text-2xl ">
+        <h2>RFM Averages</h2>
+        <Bar data={barData} />
+      </div>
 
-      <h2>Cluster Analysis</h2>
-      <Radar data={radarData} />
+      <div className="p-3 text-center text-2xl">
+        <h2>Cluster Analysis</h2>
+        <Radar data={radarData} />
+      </div>
 
-      <h2>Scatter Plots by Clusters</h2>
-      <h3>Recency vs Clusters</h3>
-      <Scatter data={scatterDataRecency} />
-      <h3>Frequency vs Clusters</h3>
-      <Scatter data={scatterDataFrequency} />
-      <h3>Monetary vs Clusters</h3>
-      <Scatter data={scatterDataMonetary} />
+      <div className="p-3 text-center text-2xl flex flex-col justify-evenly">
+        <h2 className="text-3xl">Scatter Plots by Clusters</h2>
+        <h3>Recency vs Clusters</h3>
+        <Scatter data={scatterDataRecency} />
+        <h3>Frequency vs Clusters</h3>
+        <Scatter data={scatterDataFrequency} />
+        <h3>Monetary vs Clusters</h3>
+        <Scatter data={scatterDataMonetary} />
+      </div>
     </div>
   );
 };

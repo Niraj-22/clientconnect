@@ -130,7 +130,7 @@ const Process = () => {
           </table>
         </div>
       </div>
-      <div className="p-3 bg-slate-200 rfm ">
+      <div className="p-3 m-3 bg-slate-200 rfm ">
         <ScatterComponent
           ClusterData={data.rfm_statistics ? data.rfm_statistics : []}
         />
