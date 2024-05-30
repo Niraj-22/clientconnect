@@ -4,6 +4,8 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import axios from "../../utils/axiosInstance";
 import Joyride from "react-joyride";
 import ScatterComponent from "../ScatterComponent";
+import RFMCharts from "../RFMCharts";
+import Loader from "./Loader";
 const Process = () => {
   const [data, setData] = useState({});
   const steps = [
@@ -132,6 +134,9 @@ const Process = () => {
         <ScatterComponent
           ClusterData={data.rfm_statistics ? data.rfm_statistics : []}
         />
+      </div>
+      <div className="m-3 p-3 bg-blue-100">
+        {data ? <RFMCharts data={data} /> : <Loader loading="true" />}
       </div>
     </div>
   );
